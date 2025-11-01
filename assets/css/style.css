@@ -1,0 +1,196 @@
+/* ===== Global reset ===== */
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* add bottom space so content is not under fixed footer */
+body {
+  background-color: #f8f9fa;
+  color: #212529;
+  line-height: 1.6;
+  padding-bottom: 70px; /* footer height */
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: linear-gradient(90deg, #0b3b77, #0d6efd);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: #f1f1f1 !important;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffc107 !important;
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(120deg, #0d6efd, #073f99);
+  min-height: 60vh;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.hero a.btn {
+  margin-top: 20px;
+  padding: 10px 30px;
+  font-size: 1.1rem;
+  border-radius: 30px;
+}
+
+/* ===== Carousel ===== */
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+/* ===== Cards ===== */
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  background: #fff;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ===== Filter buttons ===== */
+.filter-btn {
+  border-radius: 20px;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.filter-btn:hover {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* ===== Blog ===== */
+.blog-post {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1.2rem;
+  transition: background 0.2s;
+}
+
+.blog-post:hover {
+  background-color: #f1f3f5;
+}
+
+/* ===== About photo ===== */
+.profile-photo {
+  width: 280px;
+  max-width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: 4px solid #0d6efd;
+  border-radius: 18px;
+  background: #fff;
+}
+
+/* if some page still has img.img-fluid, do not force border */
+.about-wrapper img.img-fluid {
+  border: none;
+}
+
+/* ===== Forms ===== */
+form label {
+  font-weight: 500;
+}
+
+form button {
+  border-radius: 25px;
+  padding: 8px 25px;
+}
+
+/* ===== FIXED FOOTER ===== */
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 70px;
+  background-color: #0b3b77;
+  font-size: 0.9rem;
+  color: #fff;
+  text-align: center;
+  padding: 15px 0 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 45vh;
+    padding: 30px 10px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+    background: #0b3b77;
+    padding: 10px 0;
+  }
+
+  .card-img-top {
+    height: 180px;
+  }
+
+  .profile-photo {
+    margin: 0 auto 1.5rem;
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+}
