@@ -22,3 +22,9 @@ $(function () {
     $(this).addClass("was-validated");
   });
 });
+window.addEventListener("load", function () {
+  const photo = document.querySelector(".profile-photo");
+  if (photo) {
+    photo.classList.add("show");
+  }
+});

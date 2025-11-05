@@ -147,6 +147,20 @@ footer {
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   z-index: 100;
 }
+.profile-photo {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: 0.6s ease;
+}
+
+.profile-photo.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+}
 
 @media (max-width: 992px) {
   .hero h1 {
