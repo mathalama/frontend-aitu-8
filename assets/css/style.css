@@ -1,4 +1,3 @@
-/* ===== Global reset ===== */
 * {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -10,15 +9,20 @@ body {
   height: 100%;
 }
 
-/* add bottom space so content is not under fixed footer */
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background-color: #f8f9fa;
   color: #212529;
   line-height: 1.6;
-  padding-bottom: 70px; /* footer height */
+  margin: 0;
 }
 
-/* ===== Navbar ===== */
+main {
+  flex: 1 0 auto;
+}
+
 .navbar {
   background: linear-gradient(90deg, #0b3b77, #0d6efd);
 }
@@ -38,7 +42,6 @@ body {
   color: #ffc107 !important;
 }
 
-/* ===== Hero ===== */
 .hero {
   background: linear-gradient(120deg, #0d6efd, #073f99);
   min-height: 60vh;
@@ -66,14 +69,12 @@ body {
   border-radius: 30px;
 }
 
-/* ===== Carousel ===== */
 .carousel-caption {
   background: rgba(0, 0, 0, 0.45);
   border-radius: 10px;
   padding: 10px;
 }
 
-/* ===== Cards ===== */
 .card {
   border: none;
   border-radius: 10px;
@@ -92,7 +93,6 @@ body {
   object-fit: cover;
 }
 
-/* ===== Filter buttons ===== */
 .filter-btn {
   border-radius: 20px;
   margin-left: 3px;
@@ -104,7 +104,6 @@ body {
   color: #fff;
 }
 
-/* ===== Blog ===== */
 .blog-post {
   border-bottom: 1px solid #ddd;
   padding-bottom: 1.2rem;
@@ -115,7 +114,6 @@ body {
   background-color: #f1f3f5;
 }
 
-/* ===== About photo ===== */
 .profile-photo {
   width: 280px;
   max-width: 100%;
@@ -126,12 +124,10 @@ body {
   background: #fff;
 }
 
-/* if some page still has img.img-fluid, do not force border */
 .about-wrapper img.img-fluid {
   border: none;
 }
 
-/* ===== Forms ===== */
 form label {
   font-weight: 500;
 }
@@ -141,12 +137,7 @@ form button {
   padding: 8px 25px;
 }
 
-/* ===== FIXED FOOTER ===== */
 footer {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
   height: 70px;
   background-color: #0b3b77;
   font-size: 0.9rem;
@@ -157,7 +148,6 @@ footer {
   z-index: 100;
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 992px) {
   .hero h1 {
     font-size: 2.2rem;

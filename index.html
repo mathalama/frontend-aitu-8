@@ -48,67 +48,89 @@
       </div>
     </nav>
 
-    <header class="hero d-flex align-items-center">
-      <div class="container text-center text-white">
-        <h1 class="display-5 fw-bold">Aikyn “Mathalama” Sagyntai</h1>
-        <p class="lead mb-4">
-          Frontend learner. Java/Spring pet-projects. Portfolio assignment.
-        </p>
-        <a href="projects.html" class="btn btn-primary btn-lg">View Projects</a>
-      </div>
-    </header>
+    <main>
+      <header class="hero d-flex align-items-center">
+        <div class="container text-center text-white">
+          <h1 class="display-5 fw-bold">Aikyn Sagyntai</h1>
+          <p class="lead mb-4">
+            Frontend learner. Java/Spring pet-projects. Portfolio assignment.
+          </p>
+          <a href="projects.html" class="btn btn-primary btn-lg"
+            >View Projects</a
+          >
+        </div>
+      </header>
 
-    <section class="container my-5">
-      <h2 class="mb-4 text-center">Featured</h2>
-      <!-- Bootstrap carousel -->
-      <div id="homeCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner rounded shadow">
-          <div class="carousel-item active">
-            <img src="img/project1.jpg" class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>MST Algorithms Visual</h5>
-              <p>DAA-4 graphs, SCC, topo, DAG SP.</p>
+      <section class="py-5">
+        <div class="container">
+          <div
+            class="d-grid gap-4"
+            style="
+              grid-template-columns: repeat(4, 1fr);
+              grid-auto-rows: auto;
+              grid-template-areas:
+                'focus focus years projects'
+                'stack stack learn learn'
+                'commits commits commits commits';
+            "
+          >
+            <div class="border rounded p-4" style="grid-area: focus">
+              <h3 class="mb-3">Current Focus</h3>
+              <p class="text-muted">
+                Building production-ready backend services with Spring Boot and
+                learning microservices architecture
+              </p>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img src="img/project2.jpg" class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Task Manager API</h5>
-              <p>Go, PostgreSQL, Redis.</p>
+
+            <div
+              class="border rounded p-3 text-center"
+              style="grid-area: years"
+            >
+              <span class="text-muted small d-block">Years of Study</span>
+              <span class="fw-bold display-6" data-target="2">2</span>
             </div>
-          </div>
-          <div class="carousel-item">
-            <img src="img/project3.jpg" class="d-block w-100" alt="..." />
-            <div class="carousel-caption d-none d-md-block">
-              <h5>Mathalama UI</h5>
-              <p>HTML, CSS, jQuery, Bootstrap.</p>
+
+            <div
+              class="border rounded p-3 text-center"
+              style="grid-area: projects"
+            >
+              <span class="text-muted small d-block">Projects</span>
+              <span class="fw-bold display-6" data-target="10">10</span>
+            </div>
+
+            <div class="border rounded p-4" style="grid-area: stack">
+              <h3 class="mb-3">Tech Stack</h3>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge bg-secondary">Java</span>
+                <span class="badge bg-secondary">Spring Boot</span>
+                <span class="badge bg-secondary">SQL</span>
+                <span class="badge bg-secondary">Docker</span>
+                <span class="badge bg-secondary">Git</span>
+              </div>
+            </div>
+
+            <div class="border rounded p-4" style="grid-area: learn">
+              <h3 class="mb-3">Learning Path</h3>
+              <p class="text-muted">
+                Currently exploring design patterns, CI/CD pipelines, and cloud
+                deployment strategies
+              </p>
+            </div>
+
+            <div
+              class="border rounded p-3 text-center"
+              style="grid-area: commits"
+            >
+              <span class="text-muted small d-block">GitHub Commits</span>
+              <span class="fw-bold display-6" data-target="250">250</span>
             </div>
           </div>
         </div>
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#homeCarousel"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#homeCarousel"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
-      <p class="mb-0">
-        &copy; 2025 Aikyn “Mathalama” Sagyntai. All rights reserved.
-      </p>
-      <p class="mb-0 small">Email: yourmail@example.com | Group: SE-XX</p>
+      <p class="mb-0">&copy; 2025 Aikyn Sagyntai. All rights reserved.</p>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

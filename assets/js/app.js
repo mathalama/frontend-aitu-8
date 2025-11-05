@@ -1,6 +1,4 @@
-// jQuery ready
 $(function () {
-  // filter projects
   $(".filter-btn").on("click", function () {
     const filter = $(this).data("filter");
     if (filter === "all") {
@@ -11,14 +9,13 @@ $(function () {
     }
   });
 
-  // form validation
   const form = $("#contactForm");
   form.on("submit", function (e) {
     if (!this.checkValidity()) {
       e.preventDefault();
       e.stopPropagation();
     } else {
-      e.preventDefault(); // demo
+      e.preventDefault();
       $("#formStatus").removeClass("d-none");
       this.reset();
     }
