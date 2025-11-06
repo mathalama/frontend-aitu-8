@@ -14,43 +14,47 @@
     return;
   }
 
-  const onEnter = (el) => {
+  function inView(el) {
+    const r = el.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const threshold = Math.min(0.4 * r.height, 60);
+    return r.top < vh - threshold && r.bottom > threshold;
+  }
+
+  function onEnter(el) {
+    if (el.classList.contains("show")) return;
     el.classList.add("show");
     const c = el.querySelector(".counter");
     if (c && !c.dataset.started) {
       c.dataset.started = "1";
       runCounter(c);
     }
-  };
+  }
 
-  const io = new IntersectionObserver(
-    (entries, obs) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          onEnter(e.target);
-          obs.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.4, rootMargin: "0px 0px -40px 0px" }
-  );
+  function check() {
+    items.forEach((el) => {
+      if (!el.classList.contains("show") && inView(el)) onEnter(el);
+    });
+  }
 
-  items.forEach((el) => io.observe(el));
+  window.addEventListener("load", check);
+  window.addEventListener("scroll", check);
+  window.addEventListener("resize", check);
 })();
 
 function runCounter(el) {
   const target = parseInt(el.getAttribute("data-target"), 10) || 0;
   const dur = 900;
-  const start = performance.now();
   const from = parseInt(el.textContent.replace(/\D/g, ""), 10) || 0;
 
-  const step = (t) => {
-    const p = Math.min(1, (t - start) / dur);
-    const val = Math.floor(from + (target - from) * (1 - Math.pow(1 - p, 3))); // easeOutCubic
+  let start = Date.now();
+  let timer = setInterval(() => {
+    const p = Math.min(1, (Date.now() - start) / dur);
+    const eased = 1 - Math.pow(1 - p, 3);
+    const val = Math.floor(from + (target - from) * eased);
     el.textContent = val.toLocaleString();
-    if (p < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
+    if (p >= 1) clearInterval(timer);
+  }, 16);
 }
 
 window.addEventListener("load", () => {
@@ -63,6 +67,7 @@ window.addEventListener("load", () => {
     }
   });
 });
+
 $(function () {
   $(".filter-btn").on("click", function () {
     const filter = $(this).data("filter");
